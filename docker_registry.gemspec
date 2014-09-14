@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = DockerRegistry::VERSION
   spec.authors       = ['Sho Kusano']
   spec.email         = ['rosylilly@aduca.org']
-  spec.summary       = 'TODO: Write a short summary. Required.'
-  spec.description   = 'TODO: Write a longer description. Optional.'
+  spec.summary       = 'Docker registry HTTP API client'
+  spec.description   = 'Docker registry HTTP API client'
   spec.homepage      = 'https://github.com/rosylilly/docker_registry'
   spec.license       = 'MIT'
 

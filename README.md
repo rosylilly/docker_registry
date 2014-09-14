@@ -1,6 +1,6 @@
 # DockerRegistry
 
-TODO: Write a gem description
+Docker registry HTTP API client
 
 ## Installation
 
@@ -20,7 +20,27 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+client = DockerRegistry::Client.new("https://index.docker.io")
+client.seach("dockerfile/ruby")
+# =>
+#     [
+#       #<DockerRegistry::Repository ... >,
+#       #<DockerRegistry::Repository ... >,
+#       #<DockerRegistry::Repository ... >
+#       ...
+#     ]
+
+repository = client.all[0]
+repository.tags
+# =>
+#     [
+#       #<DockerRegistry::Tag ... >,
+#       #<DockerRegistry::Tag ... >,
+#       #<DockerRegistry::Tag ... >
+#       ...
+#     ]
+```
 
 ## Contributing
 

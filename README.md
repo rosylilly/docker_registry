@@ -21,8 +21,8 @@ Or install it yourself as:
 ## Usage
 
 ```ruby
-client = DockerRegistry::Client.new("https://index.docker.io")
-client.seach("dockerfile/ruby")
+registry = DockerRegistry::Registry.new("https://index.docker.io")
+registry.search("dockerfile/ruby")
 # =>
 #     [
 #       #<DockerRegistry::Repository ... >,

@@ -18,7 +18,7 @@ class DockerRegistry::Registry
   end
 
   def domain
-    @domain ||= URI.parse(@base_uri).host
+    @domain ||= @uri.host
   end
 
   def ping

@@ -9,7 +9,6 @@ class DockerRegistry::Registry
 
   # @see DockerRegistry::Client#initialize
   def initialize(uri)
-    @base_uri = uri
     @uri = URI.parse(uri)
     @client = DockerRegistry::Client.new(
       "#{@uri.scheme}://#{@uri.host}:#{@uri.port}",

@@ -9,6 +9,7 @@ class DockerRegistry::Registry
 
   # @see DockerRegistry::Client#initialize
   def initialize(uri)
+    @base_uri = uri
     @uri = URI.parse(uri)
     @client = DockerRegistry::Client.new(
       "#{@uri.scheme}://#{@uri.host}:#{@uri.port}",
@@ -18,7 +19,7 @@ class DockerRegistry::Registry
   end
 
   def domain
-    @domain ||= URI.parse(@base_uri).host
+    @domain ||= @uri.host
   end
 
   def ping

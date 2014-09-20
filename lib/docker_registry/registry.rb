@@ -5,12 +5,12 @@ require 'docker_registry/repository'
 require 'docker_registry/tag'
 
 class DockerRegistry::Registry
-  attr_reader :base_uri, :options, :client
+  attr_reader :url, :options, :client
 
   # @see DockerRegistry::Client#initialize
-  def initialize(uri)
-    @base_uri = uri
-    @uri = URI.parse(uri)
+  def initialize(url)
+    @url = url
+    @uri = URI.parse(url)
     @client = DockerRegistry::Client.new(
       "#{@uri.scheme}://#{@uri.host}:#{@uri.port}",
       user: @uri.user,

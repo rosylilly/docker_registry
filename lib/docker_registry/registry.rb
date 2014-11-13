@@ -35,6 +35,10 @@ class DockerRegistry::Registry
     end
   end
 
+  def [](name)
+    DockerRegistry::Repository.new({ name: name }, self)
+  end
+
   def repositry_tags(repository)
     (@client.repositry_tags(repository.name) || {}).map do |name, image_id|
       DockerRegistry::Tag.new(name, image_id, repository)

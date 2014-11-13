@@ -45,6 +45,11 @@ class DockerRegistry::Registry
     end
   end
 
+  def repositry_tag(repository, tag)
+    image_id = (@client.repositry_tag(repository.name, tag) || "")
+    DockerRegistry::Tag.new(tag, image_id, repository)
+  end
+
   def delete_repository(repository)
     @client.delete_repository(repository.name)
   end

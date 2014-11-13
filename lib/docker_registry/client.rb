@@ -38,6 +38,10 @@ class DockerRegistry::Client
     @faraday.get("/v1/repositories/#{name}/tags").body
   end
 
+  def repositry_tag(name, tag)
+    @faraday.get("/v1/repositories/#{name}/tags/#{tag}").body
+  end
+
   def delete_repository(name)
     @faraday.delete("/v1/repositories/#{name}/").status == 200
   end

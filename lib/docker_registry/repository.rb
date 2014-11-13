@@ -20,6 +20,10 @@ class DockerRegistry::Repository
     registry.repositry_tags(self)
   end
 
+  def [](tag)
+    registry.repositry_tag(self, tag)
+  end
+
   def delete!
     registry.delete_repository(self)
   end

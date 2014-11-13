@@ -26,7 +26,7 @@ class DockerRegistry::Client
   end
 
   def ping
-    @faraday.get('/v1/_ping').body === true
+    @faraday.get('/v1/_ping').body
   end
 
   # @param [#to_s] query Seach query
